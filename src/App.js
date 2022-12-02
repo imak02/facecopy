@@ -12,6 +12,7 @@ import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/homepage/Home";
 import Profile from "./pages/profile/Profile";
 import Error from "./pages/error/Error";
+import "./app.scss";
 
 function App() {
   const currentUser = true;
@@ -20,16 +21,18 @@ function App() {
     return (
       <div>
         <Navbar />
-        <div style={{ display: "flex" }}>
+        <div className="body">
           <LeftBar />
-          <Outlet />
+          <div className="outlet">
+            <Outlet />
+          </div>
           <RightBar />
         </div>
       </div>
     );
   };
 
-  const ProtectedRoute = ({children}) => {
+  const ProtectedRoute = ({ children }) => {
     if (!currentUser) {
       return <Navigate to="/login" />;
     }
