@@ -1,11 +1,12 @@
-import "./login.scss";
+import { Link } from "react-router-dom";
+import "./register.scss";
 
-export default function Login() {
+export default function Register() {
   return (
-    <div className="login">
+    <div className="register">
       <div className="card">
         <div className="left">
-          <h1>Hello World</h1>
+          <h1>FaceCopy</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
             quaerat modi enim nisi nemo cupiditate laboriosam quas eligendi
@@ -13,15 +14,21 @@ export default function Login() {
             voluptatum molestiae consequuntur consequatur.
           </p>
 
-          <span>Don't you have an account?</span>
-          <button>Register</button>
+          <span>Do you have an account?</span>
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
         </div>
         <div className="right">
-            <h1>Login</h1>
+          <h1>Register</h1>
           <form action="" className="form">
             <input type="text" name="username" id="" placeholder="Username" />
-            <input type="password" name="password" id="" placeholder="Password"/>
-            <button type="submit">Login</button>
+            <input type="email" name="email" id="" placeholder="Email" />
+
+            <input type="password" name="password" placeholder="Password" />
+            <input type="text" name="name" placeholder="Name" />
+
+            <button type="submit">Register</button>
           </form>
         </div>
       </div>
