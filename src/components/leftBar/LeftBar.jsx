@@ -12,18 +12,19 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 
 export default function LeftBar() {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="leftBar">
       <div className="container">
         <div className="menu">
           <div className="user">
-            <img
-              src="https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="userProfile"
-            />
-            <span>John Doe</span>
+            <img src={currentUser.profilePic} alt="userProfile" />
+            <span>{currentUser.name}</span>
           </div>
           <div className="item">
             <Diversity2OutlinedIcon sx={{ fontSize: 30 }} />
